@@ -8,8 +8,37 @@
 </head>
 <body>
   <div id="app">
-    <!-- トップ画面・問題・結果 省略（中身は今のと同じ） -->
+    <!-- トップ画面 -->
+    <section id="top-screen">
+      <h1>循環器系クイズ</h1>
+      <p>出題数を選んでスタート</p>
+      <div class="quiz-options">
+        <button onclick="startQuiz(5)">5問</button>
+        <button onclick="startQuiz(10)">10問</button>
+        <button onclick="startQuiz('all')">全問</button>
+      </div>
+    </section>
+
+    <!-- 問題画面 -->
+    <section id="question-screen" class="hidden">
+      <div id="question-number"></div>
+      <div id="question-text"></div>
+      <ul id="choices-list"></ul>
+      <div id="explanation-box" class="hidden">
+        <p><strong>解説:</strong> <span id="explanation-text"></span></p>
+        <button onclick="nextQuestion()">次へ</button>
+      </div>
+    </section>
+
+    <!-- 結果画面 -->
+    <section id="result-screen" class="hidden">
+      <h2>結果</h2>
+      <p id="score-text"></p>
+      <button onclick="startReview()">間違いを復習</button>
+      <button onclick="showTop()">TOPに戻る</button>
+    </section>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
