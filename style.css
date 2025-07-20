@@ -1,122 +1,62 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4択クイズ</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-
-    #app {
-      max-width: 600px;
-      margin: auto;
-      padding: 1rem;
-      background: #fff;
-      min-height: 100vh;
-    }
-
-    h1, h2, p {
-      text-align: center;
-    }
-
-    .quiz-options,
-    #choices-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin: 1rem 0;
-    }
-
-    button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #007bff;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    #choices-list li {
-      list-style: none;
-      padding: 0.75rem;
-      background: #eee;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    #choices-list li.correct {
-      background: #c8f7c5;
-      border: 2px solid #4caf50;
-    }
-
-    #choices-list li.incorrect {
-      background: #f7c5c5;
-      border: 2px solid #e74c3c;
-    }
-
-    #explanation-box {
-      background: #f9f9f9;
-      border-left: 4px solid #007bff;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      button {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <!-- トップ画面 -->
-    <section id="top-screen">
-      <h1>循環器系クイズ</h1>
-      <p>出題数を選んでスタート</p>
-      <div class="quiz-options">
-        <button onclick="startQuiz(5)">5問</button>
-        <button onclick="startQuiz(10)">10問</button>
-        <button onclick="startQuiz('all')">全問</button>
-      </div>
-    </section>
-
-    <!-- 問題画面 -->
-    <section id="question-screen" class="hidden">
-      <div id="question-number"></div>
-      <div id="question-text"></div>
-      <ul id="choices-list"></ul>
-      <div id="explanation-box" class="hidden">
-        <p><strong>解説:</strong> <span id="explanation-text"></span></p>
-        <button onclick="nextQuestion()">次へ</button>
-      </div>
-    </section>
-
-    <!-- 結果画面 -->
-    <section id="result-screen" class="hidden">
-      <h2>結果</h2>
-      <p id="score-text"></p>
-      <button onclick="startReview()">間違いを復習</button>
-      <button onclick="showTop()">TOPに戻る</button>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+  background: #fff;
+  min-height: 100vh;
+}
+.quiz-options,
+#choices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.hidden {
+  display: none;
+}
+#choices-list li {
+  list-style: none;
+  padding: 0.75rem;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#choices-list li.correct {
+  background: #c8f7c5;
+  border: 2px solid #4caf50;
+}
+#choices-list li.incorrect {
+  background: #f7c5c5;
+  border: 2px solid #e74c3c;
+}
+#explanation-box {
+  background: #f9f9f9;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 480px) {
+  button {
+    font-size: 1rem;
+  }
+}
